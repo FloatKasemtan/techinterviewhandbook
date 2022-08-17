@@ -3,7 +3,7 @@ package Week01;
 import java.util.HashMap;
 import java.util.Stack;
 
-class Solution {
+class SolutionValidParebthesis {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<Character>();
         HashMap<Character, Character> parenthesis = new HashMap<Character, Character>();
@@ -32,15 +32,12 @@ class Solution {
 
 public class ValidParentheses {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        SolutionValidParebthesis solution = new SolutionValidParebthesis();
         // Test case goes here
         System.out.println(solution.isValid("){"));
     }
-    // Runtime: 3 ms, faster than 62.77% of Java online submissions for Valid
-    // Parentheses.
-    // Memory Usage: 41.9 MB, less than 68.70% of Java online submissions for Valid
-    // Parentheses.
-    // Pretty satisfy with the result but found 2ms faster solution should have
-    // think more simple
+    // Runtime: 3 ms, faster than 62.77% of Java online submissions for Valid Parentheses.
+    // Memory Usage: 41.9 MB, less than 68.70% of Java online submissions for Valid Parentheses.
+    // Pretty satisfy with the result but found 2ms faster solution should have think more simple
     // https://leetcode.com/problems/valid-parentheses/discuss/2421370/Java-Easy-to-read-solution-(90-faster-or-75-less-mem)
 }

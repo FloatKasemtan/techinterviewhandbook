@@ -2,7 +2,7 @@ package Week01;
 
 import java.util.HashMap;
 
-class Solution {
+class SolutionTwoSum {
     public int[] twoSum(int[] nums, int target) {
 
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -20,7 +20,7 @@ class Solution {
 
 public class TwoSum {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        SolutionTwoSum solution = new SolutionTwoSum();
         // Test case goes here
         int[] nums = { 2, 7, 11, 15 };
         int target = 9;
