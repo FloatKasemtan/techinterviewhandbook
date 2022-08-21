@@ -2,17 +2,29 @@ package Week01;
 
 class SolutionValidPalimdrome {
     public boolean isPalindrome(String s) {
-        s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
-        if (s.length() == 1 || s.length() == 0) {
-            return true;
-        }
-        for (int i = 0; i < s.length() / 2; i++) {
-            if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
-                return false;
+        int lPointer = 0;
+        int rPointer = s.length()-1;
+        s = s.toLowerCase();
+        while (lPointer < rPointer) {
+            if (!isCharacter(s.charAt(lPointer))){
+                lPointer++;
+                continue;
             }
+            if (!isCharacter(s.charAt(rPointer))){
+                rPointer--;
+                continue;
+            }
+            if (s.charAt(lPointer) != s.charAt(rPointer))return false;
+
+            lPointer++;
+            rPointer--;
         }
 
         return true;
+    }
+
+    public boolean isCharacter(char character){
+        return character >= 97 && character <= 122 || character >= 48 && character <= 57;
     }
 }
 
@@ -21,15 +33,12 @@ public class ValidPalindrome {
         SolutionValidPalimdrome solution = new SolutionValidPalimdrome();
         long startTime = System.currentTimeMillis();
         System.out.println(
-                solution.isPalindrome("A man, a plan, a canal: Panama"));
+                solution.isPalindrome("aa"));
 
         long endTime = System.currentTimeMillis();
         System.out.println((endTime - startTime) + "ms");
-        // Runtime: 742 ms, faster than 29.07% of Java online submissions for Valid
-        // Palindrome.
-        // Memory Usage: 47.4 MB, less than 25.76% of Java online submissions for Valid
-        // Palindrome.
-        // Not okay with the result, the problem might be their because regex
-
+//        Runtime: 3 ms, faster than 98.90% of Java online submissions for Valid Palindrome.
+//        Memory Usage: 42 MB, less than 99.40% of Java online submissions for Valid Palindrome.
+//        Got better result using pointer
     }
 }
